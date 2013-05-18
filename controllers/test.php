@@ -31,17 +31,13 @@ class Test_Controller extends Base
     }
     
     public function test2(){
-    //	echo "test22";
-    //	$this->load_model('fq');
 
     	$this->load_model('test');
-		$a = new test_model();
-		$a->testing();
+		
+		Test_model::testing();
 		
 		
-		$this->load_view('testing', array('test'=>1));
-     	//$this->get_article('test');
-     //	$this->test_model->testing();
+		$this->load_view('test/testing', array('test'=>1));
      
     }
 }

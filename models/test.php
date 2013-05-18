@@ -11,6 +11,12 @@ class Test_Model extends Base{
 
     public function testing()
     {
-echo "abc";
+
+    	
+    	$post = R::dispense('post');
+    	$post->text = 'Hello World';
+    	
+    	$id = R::store($post);       //Create or Update
+    	
     }
 }

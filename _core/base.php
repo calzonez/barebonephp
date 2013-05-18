@@ -11,6 +11,7 @@ class Base
 	
 	public function __construct()
 	{
+		$this->load_rb();
 	}
 	
 	public function load_model($className){
@@ -46,6 +47,12 @@ class Base
 			}else{
 				die("File '$filename' not found.");
 			}
+	}
+	
+	public function load_rb()
+	{
+		R::setup('mysql:host='.DBHOST.';
+        dbname='.DBNAME, DBUSER, DBPASSWORD);
 	}
 	
 }
