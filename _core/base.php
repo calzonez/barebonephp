@@ -8,19 +8,22 @@
 
 class Base
 {
+	private $path;
 	
 	public function __construct()
 	{
+		$this->path = dirname(realpath(__DIR__));
+		
 		$this->load_rb();
 	}
 	
 	public function load_model($className){
-		
+
 		//parse out filename where class should be located
 		list($filename , $suffix) = split('_' , $className);
 		
 		//compose file name
-		$file = './models/' . strtolower($filename) . '.php';
+		$file = $this->path . '/models/' . strtolower($filename) . '.php';
 		
 		//fetch file
 		if (file_exists($file))
@@ -39,7 +42,7 @@ class Base
 	public function load_view($template, $data){
 
 		//compose file name
-		$file = './views/' . strtolower($template) . '.php';
+		$file = $this->path . '/views/' . strtolower($template) . '.php';
 		if (file_exists($file))
 			{
 				include($file);
@@ -56,7 +59,7 @@ class Base
 		//list($filename , $suffix) = split('_' , $className);
 	
 		//compose file name
-		$file = './libraries/' . strtolower($fileName) . '.php';
+		$file = $this->path . '/libraries/' . strtolower($fileName) . '.php';
 	
 		//fetch file
 		if (file_exists($file))

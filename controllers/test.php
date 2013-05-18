@@ -40,7 +40,7 @@ class Test_Controller extends Base
     	 * this is hypothetical.
     	 */
     	
-    	$this->load_module('hypothetical_module'); //maybe do this in.. core/base constructor?
+//    	$this->load_module('hypothetical_module'); //maybe do this in.. core/base constructor?
 
     	/*
     	 * router should first check local files when redirecting.
