@@ -49,6 +49,30 @@ class Base
 			}
 	}
 	
+	
+	public function load_library($fileName){
+	
+		//parse out filename where class should be located
+		//list($filename , $suffix) = split('_' , $className);
+	
+		//compose file name
+		$file = './libraries/' . strtolower($fileName) . '.php';
+	
+		//fetch file
+		if (file_exists($file))
+		{
+			//get file
+			include_once($file);
+		}
+		else
+		{	
+			//file does not exist!
+			die("File '$fileName' not found.");
+		}
+	
+	}
+	
+
 	public function load_rb()
 	{
 		R::setup('mysql:host='.DBHOST.';

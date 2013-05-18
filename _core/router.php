@@ -23,11 +23,7 @@ foreach ($parsed as $argument)
 
 //compute the path to the file
 
-
-
 $target = './controllers/' . $page[0] . '.php';
-
-
 
 //get target
 if (file_exists($target))
@@ -44,10 +40,12 @@ if (file_exists($target))
     	//once we have the controller instantiated, execute the default function
     	//pass any GET varaibles to the main method
     	   
-    	if(method_exists($class, $page[1])){
+    	if($page[1] == ""){
+    		$controller->main($getVars);
+    	}elseif(method_exists($class, $page[1])){
     		$controller->$page[1]($getVars);	
     	}else{
-    		$controller->main($getVars);
+    		die('class does not exist!');
     	}
     }
     else
