@@ -3,8 +3,10 @@ class Test_Controller extends Base
 {
 	public function __construct()
 	{
+
 		parent::__construct();
 		$this->load_model('test');
+
 	}
 
 	

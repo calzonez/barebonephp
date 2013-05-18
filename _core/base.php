@@ -4,16 +4,23 @@
  * base class that allows loading viewer, model
  * 
  */
-
+/*
+ * 
+ * make router a class
+ * in router make a global variable that contains absolute path of the module being loaded
+ * in base, if the path var is false, load local, otherwise, load module
+ * this global var always get reset when router is called
+ * 
+ */
 
 class Base
 {
 	private $path;
-	
+
 	public function __construct()
 	{
-		$this->path = dirname(realpath(__DIR__));
 		
+		$this->path = $GLOBALS['path'];
 		$this->load_rb();
 	}
 	
