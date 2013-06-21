@@ -26,10 +26,9 @@ class Test_Controller extends Base
     public function test2(){
 
 		Test_model::testing();
-		
 		$this->load_library('lib_test');
 
-		//lib_test::testing();
+		lib_test::testing();
 		$lib = new lib_test(array('a'));
 		
 		$this->load_view('test/testing', array('test'=>1));

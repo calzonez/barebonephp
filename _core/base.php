@@ -15,12 +15,10 @@
 
 class Base
 {
-	private $path;
 
 	public function __construct()
 	{
-		
-		$this->path = $GLOBALS['path'];
+		$this->path = dirname(realpath(__DIR__));
 		$this->load_rb();
 	}
 	
@@ -37,6 +35,7 @@ class Base
 		{
 			//get file
 			include_once($file);
+			
 		}
 		else
 		{
